@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดเก็บคะแนนนักเรียน | Student Grade Tracker</title>
+    <meta name="description" content="ระบบจัดการคะแนนนักเรียนและประมวลผลเกรดอัตโนมัติ">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1><span class="icon">📊</span> ระบบจัดเก็บคะแนนนักเรียน</h1>
+            <p>จัดการข้อมูลนักเรียน บันทึกคะแนน และประมวลผลเกรดอัตโนมัติอย่างง่ายดาย</p>
+        </header>
+
+        <section class="add-student-section card">
+            <h2>เพิ่มข้อมูลนักเรียนใหม่</h2>
+            <form id="add-student-form">
+                <div class="form-group">
+                    <label for="student-id">รหัสนักเรียน</label>
+                    <input type="text" id="student-id" required placeholder="เช่น 64001" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">ชื่อ - นามสกุล</label>
+                    <input type="text" id="student-name" required placeholder="ระบุชื่อนักเรียน" autocomplete="off">
+                </div>
+                <button type="submit" class="btn-primary">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    เพิ่มนักเรียน
+                </button>
+            </form>
+        </section>
+
+        <section class="student-list-section card">
+            <div class="section-header">
+                <h2>ตารางคะแนน</h2>
+                <div class="stats">
+                    <span id="total-students">จำนวนนักเรียน: 0 คน</span>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table id="grade-table">
+                    <thead>
+                        <tr>
+                            <th>รหัส</th>
+                            <th>ชื่อ - นามสกุล</th>
+                            <th class="text-center">คณิตศาสตร์ (100)</th>
+                            <th class="text-center">วิทยาศาสตร์ (100)</th>
+                            <th class="text-center">ภาษาอังกฤษ (100)</th>
+                            <th class="text-center">รวม (300)</th>
+                            <th class="text-center">ผลการเรียน</th>
+                            <th class="text-center">จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list-body">
+                        <!-- Student rows will be generated here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
